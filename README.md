@@ -1,2 +1,2 @@
-# css-playground
-A playground for all my CSS adventures
+# js-playground
+A playground for all my Javascript adventures
