@@ -327,7 +327,12 @@ function removeExternalUri(element){
 }
 
 function loadFileAJAX(file, htmleditor, jseditor, csseditor){
-	var req = new XMLHttpRequest();
+	var req;
+	if(window.XMLHttpRequest){
+		req = new XMLHttpRequest();
+	}else{
+		req = new ActiveXObject("Microsoft.XMLHTTP");
+	}
 	req.open("GET", file + ".txt", true);
 	req.overrideMimeType("application/text");
 	req.send(null);
@@ -540,7 +545,7 @@ function clearContents(htmleditor, jseditor, csseditor){
 		jseditor.getDoc().setValue("");
 		csseditor.getDoc().setValue("");
 		$('#result_box').empty();
-		$("header h2").text("JS Playground");
+		$("header h2").text("CSS Playground");
 	}
 }
 
